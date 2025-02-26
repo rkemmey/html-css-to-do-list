@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My To Do List</title>
+    <!-- <link rel="stylesheet" href="styles.css">  link to CSS file -->
+</head>
+<body>
+
+    <h1>Better to Have Done Than to Have to Do</h1>
+
+    <form id="taskForm">
+        <!-- Task input field -->
+        <label for="task">Add a task:</label>
+        <input type="text" id="task" name="task" required>
+
+        <!-- Submit button -->
+        <button type="submit">Add</button>
+    </form>
+
+    <h3>To do list: </h3>
+    <ul>
+        <li id="submittedTask"></li>
+    </ul>
+
+
+    <script>
+        // get form and task
+        const form = document.getElementById('taskForm');
+        const output = document.getElementById('submittedTask');
+        
+        // listen to submit
+        form.addEventListener('submit', function(event){
+            event.preventDefault(); // prevent page reload
+
+            const inputted = document.getElementById('task').value;
+            console.log(inputted)
+            output.textContent = inputted;
+
+            document.getElementById('inputted').value = '';
+        });
+
+    </script>
+
+        
+</body>
+</html>
