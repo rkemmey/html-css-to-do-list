@@ -9,6 +9,7 @@
 
     <h1>Better to Have Done Than to Have to Do</h1>
 
+    <!-- Create form -->
     <form id="taskForm">
         <!-- Task input field -->
         <label for="task">Add a task:</label>
@@ -19,9 +20,8 @@
     </form>
 
     <h3>To do list: </h3>
-    <ul>
-        <li id="submittedTask"></li>
-    </ul>
+    <!-- Will use this to store unordered list of tasks -->
+    <ul id="submittedTask"></ul>
 
 
     <script>
@@ -33,11 +33,24 @@
         form.addEventListener('submit', function(event){
             event.preventDefault(); // prevent page reload
 
+            // get the task the user inputted
             const inputted = document.getElementById('task').value;
-            console.log(inputted)
-            output.textContent = inputted;
 
-            document.getElementById('inputted').value = '';
+            // if task is not empty
+            if (inputted !== '') {
+                // create list and add input
+                const addTask = document.createElement('li');
+                addTask.textContent = inputted;
+
+                // add list to the ul
+                output.appendChild(addTask);
+            
+            // inspect in live server
+            console.log(inputted)
+
+            // clear input field
+            document.getElementById('task').value = '';
+        }
         });
 
     </script>
