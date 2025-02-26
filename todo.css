@@ -1,0 +1,19 @@
+  h1 {
+    color: darkmagenta;
+    font-style: italic;
+    font-size: 30px;
+  }
+
+  h3 {
+    color: crimson;
+    font-size: 24px;
+  }
+
+  label {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  ul {
+    font-size: 22px;
+  }
